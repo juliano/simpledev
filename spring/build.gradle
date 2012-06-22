@@ -1,0 +1,46 @@
+apply plugin: 'eclipse'
+apply plugin: 'jetty'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+version = '0.1-SNAPSHOT'
+group = 'br.com.simpledev'
+
+repositories {
+  mavenCentral()
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+configurations {
+  provided
+}
+
+sourceSets {
+  main { compileClasspath += configurations.provided }
+  test { runtimeClasspath += configurations.provided }
+}
+
+eclipse.classpath.plusConfigurations += configurations.provided
+
+dependencies {
+  compile 'commons-logging:commons-logging:1.1.1'
+  compile 'javax.servlet:jstl:1.2'
+  compile 'org.springframework:spring-asm:3.1.1.RELEASE'
+  compile 'org.springframework:spring-beans:3.1.1.RELEASE'
+  compile 'org.springframework:spring-context:3.1.1.RELEASE'
+  compile 'org.springframework:spring-core:3.1.1.RELEASE'
+  compile 'org.springframework:spring-jdbc:3.1.1.RELEASE'
+  compile 'org.springframework:spring-test:3.1.1.RELEASE'
+  compile 'org.springframework:spring-web:3.1.1.RELEASE'
+  compile 'org.springframework:spring-webmvc:3.1.1.RELEASE'
+
+  provided 'javax.servlet:servlet-api:2.5'
+  
+  testCompile 'org.mockito:mockito-core:1.9.0'
+  testCompile 'junit:junit:4.10'
+}
+
+[jettyRunWar, jettyRun]*.contextPath = '/'
