@@ -6,4 +6,11 @@ permlink: /simplificando-struts2.html
 last_updated: 2012-10-07
 ---
 
-This is the first post.  It has been updated since the post so has a last_updated value in the frontmatter.
+A maior parte do conteúdo sobre Struts 2 que encontramos por aí ensina a usar o framework de uma forma
+bastante complicada. Não gosto muito do Struts 2, acho um framework ultrapassado, que fica devendo muito
+para as outras opções que temos hoje. Ainda sim, muitos precisam trabalhar com ele, então vou simplificar
+nesse post a forma de trabalhar com esse framework.
+
+Esse exemplo será bem simples, mostrando apenas como fazer uma requisição e o redirecionamento para outra
+action, isso sem utilizar XML, sem herdar de ActionSupport, sem implementar Action ou nada que é comumente
+usado. Aqui, só será necessário fazer uso do pacote de convenções do Struts 2 e de algumas de suas anotações.
