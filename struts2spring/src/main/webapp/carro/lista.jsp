@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Simple Struts 2</title>
+	<title>SimpleDev - Struts 2 com Spring</title>
 </head>
 <body>
 	<h3>Lista de carros</h3>
