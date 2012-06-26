@@ -2,10 +2,10 @@
 
 <html>
 <head>
-<title>Struts 2 Simples - Combos Dependentes</title>
+<title>SimpleDev - Combos Dependentes com Struts 2</title>
 </head>
 <body>
-	<h3>Struts 2 Simples - Combos Dependentes - Estado e Cidade</h3>
+	<h3>SimpleDev - Combos Dependentes com Struts 2 - Estado e Cidade</h3>
 
 	<select name="estados" id="estados">
 		<option>Selecione o estado</option>

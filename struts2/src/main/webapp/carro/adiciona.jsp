@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Simple Struts 2</title>
+	<title>SimpleDev - Struts 2</title>
 </head>
 <body>
 	<h3>Novo Carro</h3>
