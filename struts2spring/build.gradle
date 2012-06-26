@@ -1,0 +1,49 @@
+apply plugin: 'eclipse'                                                                                                                  
+apply plugin: 'jetty'
+apply plugin: 'maven'
+
+version = '0.1-SNAPSHOT'                                                                                                                 
+group = 'br.com.simpledev'
+
+repositories {
+  mavenCentral()
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+configurations {
+   provided
+}
+
+sourceSets {
+  main { compileClasspath += configurations.provided }
+  test { runtimeClasspath += configurations.provided }
+}
+
+eclipse.classpath.plusConfigurations += configurations.provided
+
+dependencies {
+
+  compile 'org.apache.struts:struts2-core:2.3.4'
+  compile 'org.apache.struts:struts2-convention-plugin:2.3.4'
+  compile 'org.apache.struts.xwork:xwork-core:2.3.4'
+  compile 'ognl:ognl:3.0.5'
+  compile 'jstl:jstl:1.2'
+  compile 'org.javassist:javassist:3.16.1-GA'
+  compile 'org.freemarker:freemarker:2.3.19'
+  compile 'commons-logging:commons-logging:1.1.1'
+  compile 'commons-io:commons-io:2.1'
+  compile 'commons-fileupload:commons-fileupload:1.2.2'
+
+  compile 'org.apache.struts:struts2-spring-plugin:2.3.4'
+  compile 'org.springframework:spring-asm:3.1.1.RELEASE'
+  compile 'org.springframework:spring-beans:3.1.1.RELEASE'
+  compile 'org.springframework:spring-context:3.1.1.RELEASE' 
+  compile 'org.springframework:spring-core:3.1.1.RELEASE'
+  compile 'org.springframework:spring-expression:3.1.0.RELEASE'
+  compile 'org.springframework:spring-web:3.1.1.RELEASE'
+
+  provided 'javax.servlet:servlet-api:2.5'                                                                                               
+}
+
+[jettyRunWar, jettyRun]*.contextPath = '/'
