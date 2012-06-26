@@ -2,9 +2,12 @@ package br.com.simpledev.struts2.model;
 
 public class Carro {
 
-	private final Long id;
-	private final String nome;
-	private final Integer ano;
+	private Long id;
+	private String nome;
+	private Integer ano;
+
+	public Carro() {
+	}
 
 	public Carro(final Long id, final String nome, final Integer ano) {
 		this.id = id;
@@ -16,11 +19,23 @@ public class Carro {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public Integer getAno() {
 		return ano;
+	}
+
+	public void setAno(Integer ano) {
+		this.ano = ano;
 	}
 }
