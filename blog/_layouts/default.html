@@ -34,7 +34,20 @@
           {{ content }}
         </div>
         <div class="span3">
-          <a href="/simplificando-struts2.html">Struts 2</a>
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Tópicos Recentes</li>
+              {% for post in site.posts limit:10 %}
+                <li>
+                  <a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+              <li class="nav-header">Categorias</li>
+              {% for category in site.categories %}
+                <li><a href="/categories/{{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
