@@ -6,7 +6,8 @@
     <meta name="description" content="{{ page.description }}" />
     {% endif %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" media="screen" href="/stylesheets/screen.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="/stylesheets/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="/stylesheets/style.css" type="text/css" />
     {% if site.feedburner %}
     <link href="http://feeds.feedburner.com/{{ site.feedburner.id }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
     {% endif %}
@@ -25,13 +26,16 @@
     {% endif %}
   </head>
   <body>
-    <div id="page">
-      <div id="header">
-        <a href="/"><h1>{{ site.title }}</h1></a>
-      </div>
-      <div id="body">
-        {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
-        {{ content }}
+    <div class="container">
+      <a href="/"><h1>{{ site.title }}</h1></a>
+      <div class="row">
+        <div class="span9">
+          {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+          {{ content }}
+        </div>
+        <div class="span3">
+          <a href="/simplificando-struts2.html">Struts 2</a>
+        </div>
       </div>
     </div>
 
