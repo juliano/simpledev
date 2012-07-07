@@ -92,3 +92,26 @@ public String novo() {
 Que apenas redireciona para outra página. Apesar da action não fazer nada além disso, é uma boa 
 prática nunca redirecionar direto para a jsp, sempre devemos passar pela action antes. Isso nos leva 
 para a adiciona.jsp:
+
+adiciona.jsp
+
+O método setCarro deve existir para permitir que o Struts faça o trabalho de popular o objeto, 
+quando usamos name=“objeto.atributo”. Ao submeter o form, é chamada a action adiciona:
+
+@Action(value = "adiciona", results = @Result(name = "ok", type = "redirectAction", params = {"actionName", "lista" }))
+public String adiciona() {
+    dao.adiciona(carro);
+    return "ok";
+}
+
+Ao inserir o novo carro, é interessante apresentar a lista de carros cadastrados. A diferença 
+aqui está no @Result, o atributo type é usado para indicar que o redirecionamento não é para 
+uma jsp como nos casos anteriores, mas para a action passando “redirectAction” ao atributo e 
+em seguida usando params para informar qual action será chamada. Esse atributo funciona como 
+um “mapa informal”, para usá-lo devemos passar os valores no formato chave – valor.
+
+Aqui foi apresentada uma forma simples de trabalhar com o Struts 2, que apesar de não ser a melhor 
+ferramenta existente, pode trazer várias facilidades para o desenvolvimento web quando bem explorada.
+
+
+
