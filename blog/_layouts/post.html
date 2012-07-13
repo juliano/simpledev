@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% if page.date %}<div class="postdate">Posted on {{ page.date | date_to_string }}{% if page.last_updated %}, last updated on {{ page.last_updated | date_to_string }}{% endif %}</div>{% endif %}
+<div id="by">Por <a href="http://twitter.com/vonjuliano">Juliano Alves</a>{% if page.date %} em {{ page.date | date: "%d/%m/%Y"  }}{% if page.last_updated %}, atualizado em {{ page.last_updated | date: "%d/%m/%Y" }}{% endif %}</div>{% endif %}
 
 <div class="post">
 {{ content }}
