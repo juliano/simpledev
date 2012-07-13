@@ -1,0 +1,46 @@
+#site-name {
+  color: white;
+  font-size: 88;
+}
+
+div#bar {
+  width: 940px;
+  margin: 0px auto;
+  padding: 15px;
+}
+
+h1, #by{
+  margin-bottom: 20px;
+}
+
+#by {
+  margin-top: -20px;
+}
+
+pre {
+  font-family: "monospace";
+  font-size: 12.025px;
+}
+
+.b {
+  font-weight: bold;
+  color: black;
+}
+
+.str {
+  color: #D14
+}
+
+.cl {
+  font-weight: bold;
+  color: #458
+}
+
+.mc {
+  font-weight: bold;
+  color: #900;
+}
+
+.at {
+  color: teal;
+}
