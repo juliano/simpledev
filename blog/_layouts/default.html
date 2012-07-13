@@ -26,8 +26,14 @@
     {% endif %}
   </head>
   <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div id="bar" class="container">
+          <a id="site-name" class="brand" href="/"><h1>{{ site.title }}</h1></a>
+        </div>
+      </div>
+    </div>
     <div class="container">
-      <a href="/"><h1>{{ site.title }}</h1></a>
       <div class="row">
         <div class="span9">
           {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
