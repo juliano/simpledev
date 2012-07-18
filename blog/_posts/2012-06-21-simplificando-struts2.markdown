@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simplificando - Struts 2
-category: Struts 2
+category: Struts2
 permlink: /simplificando-struts2.html
 last_updated: 2012-10-07
 ---
