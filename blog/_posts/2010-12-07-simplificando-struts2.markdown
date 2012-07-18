@@ -114,8 +114,11 @@ uma jsp como nos casos anteriores, mas para a action passando “redirectAction�
 em seguida usando params para informar qual action será chamada. Esse atributo funciona como 
 um “mapa informal”, para usá-lo devemos passar os valores no formato chave – valor.
 
-Aqui foi apresentada uma forma simples de trabalhar com o Struts 2, que apesar de não ser a melhor 
-ferramenta existente, pode trazer várias facilidades para o desenvolvimento web quando bem explorada.
+Aqui foi apresentada uma forma simples de trabalhar com o Struts 2, de forma a trazer algumas facilidades 
+sendo bem explorada. Se precisar usá-la, simplifique como foi mostrado aqui. Se tiver opção, use VRaptor 
+ou Spring MVC.
 
-
-
+<br>
+<a href="https://github.com/juliano/simpledev/tree/master/struts2">
+  <img src="/images/github.png"> Código do exemplo.
+</a>
