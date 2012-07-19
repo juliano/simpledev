@@ -2,7 +2,7 @@
 
 permalink: date
 pygments: true
-exclude: ['Rakefile', 'README.md', 'config.rb']
+exclude: ['Rakefile', 'README.md', 'config.rb', 'deploy.sh']
 markdown: rdiscount
 
 # configuration required for some pages
@@ -17,11 +17,11 @@ email: von.juliano@gmail.com
 # feedburner:
 #   id: feedburnerid
 
-# google_analytics:
-#   account: UA-XXXXX-X
+google_analytics:
+  account: UA-33493244-1
 
 # github:
 #   username: ghusername
 
-# disqus:
-#   id: disqusid
+disqus:
+  id: simpledevcombr
