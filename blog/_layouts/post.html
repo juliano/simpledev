@@ -9,7 +9,7 @@ layout: default
 <br>
 {% if site.related_posts.size > 0 %}
 <div id="related">
-  <h2>Páginas relacionadas {{ site.related_posts }}</h2>
+  <h2>Páginas relacionadas</h2>
   <ul class="posts">
     {% for post in site.related_posts limit:5 %}
       <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>

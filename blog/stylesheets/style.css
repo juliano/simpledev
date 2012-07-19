@@ -18,7 +18,7 @@ h1, #by{
 }
 
 pre {
-  font-family: "monospace";
+  font-family: monospace, 'Bitstream Vera Sans Mono', 'Courier'
   font-size: 12.025px;
 }
 
