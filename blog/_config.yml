@@ -5,6 +5,8 @@ pygments: true
 exclude: ['Rakefile', 'README.md', 'config.rb', 'deploy.sh']
 markdown: rdiscount
 
+category_title_prefix: 'Categoria: '
+
 # configuration required for some pages
 
 domain: www.simpledev.com.br
