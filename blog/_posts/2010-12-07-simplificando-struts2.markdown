@@ -120,5 +120,5 @@ ou Spring MVC.
 
 <br>
 <a href="https://github.com/juliano/simpledev/tree/master/struts2">
-  <img src="/images/github.png"> Código do exemplo.
+  <img src="/images/github.png"> <strong>Código do exemplo.</strong>
 </a>
