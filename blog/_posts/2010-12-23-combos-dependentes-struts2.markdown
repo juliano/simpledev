@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Combos dependentes com Struts 2
-permalink: /combos-dependentes-struts2.html
 category: Struts2
+permalink: /combos-dependentes-struts2.html
 last_updated: 2012-07-19
 ---
 
 Este é um exemplo do clássico problema dos combos dependentes, do tipo estado - cidade.
 Por si só, o suporte a ajax do Struts 2 não é suficiente, então é necessário fazer uso de um 
 [plugin para JSON][1] que facilita esse trabalho. Para usá-lo, além da [configuração padrão para uso 
-do Struts 2][1], é preciso adicionar mais um jar as dependências do **build.gradle**:
+do Struts 2][2], é preciso adicionar mais um jar nas dependências do **build.gradle**:
 
 <pre>compile <span class="str">'org.apache.struts.xwork:xwork-core:2.3.4'</span></pre>
 
@@ -46,6 +46,11 @@ E o populaCidades.js, que usa o jQuery para fazer a requisição e montar o comb
 
 Creio que com as tags do Struts 2 seja possível fazer isso sem precisar fazer uso do jQuery, 
 mas prefiro não usá-las. Prefiro usar o jQuery eu mesmo a acreditar no Struts 2 funcionando sozinho.
+
+<br>
+<a href="https://github.com/juliano/simpledev/tree/master/struts2">
+  <img src="/images/github.png"> <strong>Código do exemplo.</strong>
+</a>
 
 [1]: https://cwiki.apache.org/confluence/display/WW/JSON%20Plugin
 [2]: /simplificando-struts2.html
