@@ -52,7 +52,7 @@ action esteja em um pacote nomeado como action, actions ou struts2, e o framewor
 O Dao é uma dependência da Action, portanto o ideal seria injetá-lo pelo construtor, mas achei 
 melhor instânciá-lo diretamente para não aumentar a complexidade do exemplo, já que aqui o Struts 2 
 é usado sozinho. O ideal seria injetá-lo com auxílio de um Container de IoC, como Spring ou Pico 
-Container. Isso será mostrado em outro post.
+Container. [Veja nesse post como integrar Struts 2 com Spring][1].
 
 <pre>@Action<span class="b">(</span>value <span class="b">=</span> <span class="str">"lista"</span>, results <span class="b">=</span> @Result<span class="b">(</span>name <span class="b">=</span> <span class="str">"ok"</span>, location <span class="b">=</span> <span class="str">"/carro/lista.jsp"</span><span class="b">))
 public</span> String <span class="b"><span class="mc">lista</span>() {</span>
@@ -122,3 +122,5 @@ ou Spring MVC.
 <a href="https://github.com/juliano/simpledev/tree/master/struts2">
   <img src="/images/github.png"> <strong>Código do exemplo.</strong>
 </a>
+
+[1]: http://www.simpledev.com.br/struts2-spring.html
