@@ -80,7 +80,7 @@ Quem efetivamente atende a requisição são os métodos:
 
 <pre>
 @RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/lista"</span>, method = GET<span class="b">)
-public</span> List<Carro> lista<span class="b">() {
+public</span> List&lt;Carro&gt; lista<span class="b">() {
 	return</span> dao.<span class="at">lista</span><span class="b">();
 }</span></pre>
 
@@ -106,9 +106,9 @@ deles será mostrada nesse exemplo. Todos os tipos de retorno permitidos podem s
 Abaixo, os métodos para inserção de um carro:
 
 <pre>
-@RequestMapping(value = "/novo", method = GET)
-public ModelAndView novo() {
-	return new ModelAndView("carro/novo", "carro", new Carro());
+@RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/novo"</span>, method <span class="b">=</span> GET<span class="b">)
+public</span> ModelAndView <span class="mc">novo</span><span class="b">() {
+	return new</span> <span class="mc">ModelAndView</span><span class="b">(</span><span class="str">"carro/novo"</span>, <span class="str">"carro"</span><span class="b">, new</span> Carro<span class="b">());</span>
 }</pre>
 
 Esse método leva para a página com o formulário de cadastro de um novo carro. Aqui faço uso da 
@@ -118,11 +118,11 @@ usado para referenciar o objeto na página (“carro”, que se não for informa
 o que facilita para o próximo método:
 
 <pre>
-@RequestMapping(value = "/novo", method = POST)
-public String novo(final Carro carro) {
-	dao.adiciona(carro);
-	return "redirect:lista";
-}</pre>
+@RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/novo"</span>, method <span class="b">=</span> POST<span class="b">)
+public</span> String <span class="mc">novo</span><span class="b">(final</span> Carro carro<span class="b">) {</span>
+	dao.<span class="at">adiciona</span><span class="b">(</span>carro<span class="b">);
+	return</span> <span class="str">"redirect:lista"</span><span class="b">;
+}</span></pre>
 
 Os métodos da classe possuem o mesmo nome, mas devido aos métodos HTTP para acesso a cada um 
 deles, o Spring sabe exatamente qual chamar. O método recebe um Carro, já que no método 
@@ -136,11 +136,11 @@ palavra redirect, assim ele vai chamar o controller que lista todos os carros.
 Por fim, os métodos de edição:
 
 <pre>
-@RequestMapping(value = "/editar/{id}", method = GET)
-public ModelAndView editar(@PathVariable Long id) {
-	Carro carro = dao.busca(id);
-	return new ModelAndView("carro/editar", "carro", carro);
-}</pre>
+@RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/editar/{id}"</span>, method <span class="b">=</span> GET<span class="b">)
+public</span> ModelAndView <span class="mc">editar</span><span class="b">(</span>@PathVariable Long id<span class="b">) {</span>
+	Carro carro <span class="b">=</span> dao.<span class="at">busca</span><span class="b">(</span>id<span class="b">);
+	return new</span> <span class="mv">ModelAndView</span><span class="b">(</span><span class="str">"carro/editar"</span>, <span class="str">"carro"</span>, carro<span class="b">);
+}</span></pre>
 
 Esse método busca o Carro para edição através do id, o qual é informado na url. */editar/{id}* 
 indica o formato da url, de forma que uma chamada válida seria /editar/2. O parâmetro id 
@@ -149,11 +149,11 @@ informado na url deve ser associado a esse método. O uso do ModelAndView é fei
 forma do método de inserção.
 
 <pre>
-@RequestMapping(value = "/editar", method = PUT)
-public String editar(final Carro carro) {
-	dao.atualiza(carro);
-	return "redirect:lista";
-}</pre>
+@RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/editar"</span>, method <span class="b">=</span> PUT<span class="b">)
+public</span> String <span class="mc">editar</span><span class="b">(final</span> Carro carro<span class="b">) {</span>
+	dao.<span class="at">atualiza</span><span class="b">(</span>carro<span class="b">);
+	return</span> <span class="str">"redirect:lista"</span><span class="b">;
+}</span></pre>
 
 Esse é o método que vai salvar as alterações feitas no objeto. Aqui é usado o método HTTP 
 PUT. O DispatcherServlet do Spring suporta os seguintes métodos HTTP: GET, POST, HEAD, PUT e 
