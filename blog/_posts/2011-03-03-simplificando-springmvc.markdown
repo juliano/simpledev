@@ -139,7 +139,7 @@ Por fim, os métodos de edição:
 @RequestMapping<span class="b">(</span>value <span class="b">=</span> <span class="str">"/editar/{id}"</span>, method <span class="b">=</span> GET<span class="b">)
 public</span> ModelAndView <span class="mc">editar</span><span class="b">(</span>@PathVariable Long id<span class="b">) {</span>
 	Carro carro <span class="b">=</span> dao.<span class="at">busca</span><span class="b">(</span>id<span class="b">);
-	return new</span> <span class="mv">ModelAndView</span><span class="b">(</span><span class="str">"carro/editar"</span>, <span class="str">"carro"</span>, carro<span class="b">);
+	return new</span> <span class="mc">ModelAndView</span><span class="b">(</span><span class="str">"carro/editar"</span>, <span class="str">"carro"</span>, carro<span class="b">);
 }</span></pre>
 
 Esse método busca o Carro para edição através do id, o qual é informado na url. */editar/{id}* 
