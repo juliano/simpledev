@@ -1,0 +1,88 @@
+---
+layout: post
+title: Integrando JSF 2 e Spring
+categories: JSF2 Spring
+permalink: /jsf2-spring.html
+last_updated: 2012-08-09
+---
+
+É muito fácil encontrar material sobre JSF 2 de qualidade na internet, mas não se encontra facilmente uma forma
+fácil de realizar a integração com Spring, e quando encontrado, geralmente a integração é feita via xml. Nesse 
+post será mostrado como fazer a integração entre essas duas ferramentas de uma maneira simples usando anotações 
+e um mínimo de xml.
+
+Para trabalhar com o JSF são necessários dois jars:
+
+<pre>
+compile <span class="str">'com.sun.faces:jsf-api:2.2.0-m04'</span>
+compile <span class="str">'com.sun.faces:jsf-impl:2.2.0-m04'</span>
+</pre>
+
+Por parte do Spring, são os mesmos jars usados para [integração com Struts][1]:
+
+<pre>
+compile <span class="str">'org.springframework:spring-asm:3.1.1.RELEASE'</span>
+compile <span class="str">'org.springframework:spring-beans:3.1.1.RELEASE'</span>
+compile <span class="str">'org.springframework:spring-context:3.1.1.RELEASE' </span>
+compile <span class="str">'org.springframework:spring-core:3.1.1.RELEASE'</span>
+compile <span class="str">'org.springframework:spring-expression:3.1.0.RELEASE'</span>
+compile <span class="str">'org.springframework:spring-web:3.1.1.RELEASE'</span>
+</pre>
+
+A configuração no web.xml fica assim:
+
+<script src="https://gist.github.com/3310282.js?file=web.xml"></script>
+
+As tags servlet e servlet-name são para o uso “padrão” do JSF. A classe **ContextLoaderListener** é quem vai 
+subir o contexto do Spring, também uma configuração comum. O que merece atenção aqui é o 
+**RequestContextListener**, o qual vai expor o request para que o Spring possa manipulá-lo, permitindo assim 
+que ele faça as injeções no momento adequado.
+
+Por fim, há mais uma alteração que deve ser colocada no **faces-config.xml**:
+
+<script src="https://gist.github.com/3310282.js?file=faces-config.xml"></script>
+
+JSF utiliza Expression Language (EL) para determinar a qual classe a página xhtml se refere. Fazendo uso de 
+uma classe chamada [ELResolver][2] ele pega a String passada, a interpreta e faz a referência adequada. A 
+classe [SpringBeanFacesELResolver][3] proporciona a integração entre os dois frameworks interceptando a 
+requisição e passando-a para o contexto do Spring, o qual a manipula para prover as dependências requeridas 
+pelos ManagedBeans, devolvendo-a em seguida para o ELResolver do próprio JSF.
+
+Para ficar mais claro, vamos ao código. Abaixo, um Dao gerenciado pelo Spring:
+
+<pre>
+@Repository<span class="b">(</span><span class="str">"carroDao"</span><span class="b">)
+public class</span> <span class="cl">JdbcCarroDao</span> <span class="b">implements</span> CarroDao <span class="b">{</span>
+
+    <span class="cm">// métodos aqui</span>
+<span class="b">}</span>
+</pre>
+
+Ao utilizar a anotação **@Repository**, se houver apenas uma implementação para CarroDao, geralmente para o 
+Spring não é necessário que um nome seja especificado, mas ele se faz necessário ao trabalhar com JSF:
+
+<pre>
+@ManagedBean
+<span class="b">public class</span> <span class="cl">CarroBean</span> <span class="b">{</span>
+
+    @ManagedProperty<span class="b">(</span>name <span class="b">=</span> <span class="str">"dao"</span>, value <span class="b">=</span> <span class="str">"#{carroDao}"</span><span class="b">)
+    private CarroDao</span> dao<span class="b">;
+
+    public</span> <span class="cl">void</span> <span class="mc">setDao</span><span class="b">(final</span> CarroDao dao<span class="b">) {
+        this.</span><span class="at">dao</span> <span class="b">=</span> dao<span class="b">;
+    }
+}</span>
+</pre>
+
+Agora a anotação [@ManagedProperty][4] será usada não apenas para se referir ao que está no escopo web, mas 
+também para lidar com os beans do Spring. A propriedade *name* é usada para indicar o nome do campo do 
+managedBean, para que o JSF chame o setter adequado, enquanto a propriedade *value* vai ser usada para 
+referenciar o nome do bean, no caso o carroDao anteriormente especificado.
+
+E é só isso. Fazendo uso do fluxo do próprio JSF, e com algumas poucas configurações, o Spring proporciona uma 
+integração simples e natural, que não altera em nada a forma de trabalhar com JSF.
+
+[1]: /struts2-spring.html
+[2]: http://download.oracle.com/javaee/5/api/javax/el/ELResolver.html
+[3]: http://static.springsource.org/spring/docs/3.0.x/api/org/springframework/web/jsf/el/SpringBeanFacesELResolver.html
+[4]: http://download.oracle.com/javaee/6/api/javax/faces/bean/ManagedProperty.html
