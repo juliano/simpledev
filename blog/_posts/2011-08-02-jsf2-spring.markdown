@@ -6,8 +6,8 @@ permalink: /jsf2-spring.html
 last_updated: 2012-08-09
 ---
 
-É muito fácil encontrar material sobre JSF 2 de qualidade na internet, mas não se encontra facilmente uma forma
-fácil de realizar a integração com Spring, e quando encontrado, geralmente a integração é feita via xml. Nesse 
+É muito fácil encontrar material sobre JSF 2 de qualidade na internet, mas não se encontra uma forma
+fácil de realizar a integração com Spring, e quando encontrada, geralmente a integração é feita via xml. Nesse 
 post será mostrado como fazer a integração entre essas duas ferramentas de uma maneira simples usando anotações 
 e um mínimo de xml.
 
