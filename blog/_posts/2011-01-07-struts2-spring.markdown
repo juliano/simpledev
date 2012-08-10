@@ -91,8 +91,8 @@ import org.springframework.beans.factory.annotation.Autowired;
     <span class="b">private CarroDao</span> dao<span class="b">;</span>
 
     @Autowired
-    <span class="b">public</span> <span class="mc">CarroAction</span>(CarroDao dao<span class="b">) {
-        this.</span>dao = dao<span class="b">;
+    <span class="b">public</span> <span class="mc">CarroAction</span><span class="b">(</span>CarroDao dao<span class="b">) {
+        this.</span><span class="at">dao</span> = dao<span class="b">;
     }</span>
 </pre>
 
