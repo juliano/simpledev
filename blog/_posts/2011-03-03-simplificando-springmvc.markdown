@@ -11,7 +11,7 @@ suas falhas de forma simples. Não se encontra muito material sobre o Spring MVC
 muito sobre a versão 2.5. Aqui será mostrado como trabalhar com a versão 3 adotando a maior 
 parte de seus recursos.
 
-A configuração primeiro. Abaixo, o build.gradle do exemplo.
+A configuração primeiro. Abaixo, o [build.gradle][10] do exemplo.
 
 <script src="https://gist.github.com/3229414.js?file=build.gradle"></script>
 
@@ -195,3 +195,4 @@ muito poderoso, simples, que possui inúmeras ferramentas para ajudar no desenvo
 [7]: http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/mvc.html
 [8]: http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/view.html#view-jsp-formtaglib
 [9]: /struts2-spring.html
+[10]: /simplificando-gradle.html

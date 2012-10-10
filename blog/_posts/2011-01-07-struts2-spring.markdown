@@ -17,7 +17,7 @@ quais são os ganhos que o Spring traz para a aplicação.
 Primeiro a configuração. Além dos jars padrões para usar o Struts 2 será necessário mais um, 
 usado para integração com o Spring, o **struts2-spring-plugin**. Por parte do Spring, é 
 necessários adicionar os jars **spring-asm**, **spring-beans**, **spring-context**, 
-**spring-core**, **spring-expression** e **spring-web**. Abaixo, o **build.gradle** completo 
+**spring-core**, **spring-expression** e **spring-web**. Abaixo, o [build.gradle][6] completo 
 do projeto.
 
 <script src="https://gist.github.com/3182217.js?file=build.gradle"></script>
@@ -113,3 +113,4 @@ integração, dessa vez entre Spring e Hibernate, mas isso é assunto para um pr
 [3]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/stereotype/Component.html
 [4]: http://martinfowler.com/eaaCatalog/repository.html
 [5]: http://amzn.to/MZyZUz
+[6]: /simplificando-gradle.html

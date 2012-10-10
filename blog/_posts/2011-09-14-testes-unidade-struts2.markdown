@@ -16,7 +16,7 @@ Serão criados aqui os testes para a CarroAction, do post [Simplificando - Strut
 }</span>
 </pre>
 
-E para fazer os testes, serão adicionados ao build.gradle os jars do [JUnit][2] e do [Mockito][3]:
+E para fazer os testes, serão adicionados ao [build.gradle][7] os jars do [JUnit][2] e do [Mockito][3]:
 
 <pre>
 testCompile <span class="str">'junit:junit:4.10'</span>
@@ -55,3 +55,4 @@ Um ponto importante foi a alteração no construtor da classe CarroAction, pois 
 [4]: /codigo-limpo.html
 [5]: http://www.junit.org/apidocs/org/junit/Assert.html#assertFalse%28boolean%29
 [6]: http://www.junit.org/apidocs/org/junit/Assert.html
+[7]: /simplificando-gradle.html
