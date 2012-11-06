@@ -9,7 +9,7 @@ last_updated: 2012-07-19
 Este é um exemplo do clássico problema dos combos dependentes, do tipo estado - cidade.
 Por si só, o suporte a ajax do Struts 2 não é suficiente, então é necessário fazer uso de um 
 [plugin para JSON][1] que facilita esse trabalho. Para usá-lo, além da [configuração padrão para uso 
-do Struts 2][2], é preciso adicionar mais um jar nas dependências do **build.gradle**:
+do Struts 2][2], é preciso adicionar mais um jar nas dependências do [build.gradle][3]:
 
 <pre>compile <span class="str">'org.apache.struts.xwork:xwork-core:2.3.4'</span></pre>
 
@@ -54,3 +54,4 @@ mas prefiro não usá-las. Prefiro usar o jQuery eu mesmo a acreditar no Struts 
 
 [1]: https://cwiki.apache.org/confluence/display/WW/JSON%20Plugin
 [2]: /simplificando-struts2.html
+[3]: /simplificando-gradle.html

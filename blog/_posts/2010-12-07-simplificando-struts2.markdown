@@ -15,7 +15,7 @@ Esse exemplo será bem simples, mostrando apenas como fazer uma requisição e o
 action, isso sem utilizar XML, sem herdar de ActionSupport, sem implementar Action ou nada que é comumente
 usado. Aqui, só será necessário fazer uso do pacote de convenções do Struts 2 e de algumas de suas anotações.
 
-Primeiro, a configuração. Abaixo, o build.gradle do projeto.
+Primeiro, a configuração. Abaixo, o [build.gradle][2] do projeto.
 
 <script src="https://gist.github.com/3106705.js?file=build.gradle"></script>
 
@@ -124,3 +124,4 @@ ou Spring MVC.
 </a>
 
 [1]: http://www.simpledev.com.br/struts2-spring.html
+[2]: /simplificando-gradle.html
