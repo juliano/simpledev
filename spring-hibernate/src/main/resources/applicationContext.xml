@@ -14,12 +14,12 @@
 
     <context:property-placeholder location="classpath:jdbc.properties" />
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-        p:driverClassName="${jdbc.driver}" p:url="${jdbc.url}"
+        p:driverClassName="com.mysql.jdbc.Driver" p:url="${jdbc.url}"
         p:username="${jdbc.username}" p:password="${jdbc.password}">
     </bean>
 
     <bean id="sessionFactory"
-        class="org.springframework.orm.hibernate4.annotation.LocalSessionFactoryBean">
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>

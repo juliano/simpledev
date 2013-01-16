@@ -7,10 +7,12 @@
 
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 
-		<!-- mapping files -->
-		<mapping resource="org/hibernate/auction/Item.hbm.xml" />
-		<mapping resource="org/hibernate/auction/Bid.hbm.xml" />
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<mapping class="br.com.simpledev.springhibernate.model.Carro" />
 
 	</session-factory>
 

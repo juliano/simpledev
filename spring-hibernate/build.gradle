@@ -33,7 +33,10 @@ dependencies {
   compile 'org.springframework:spring-tx:3.1.2.RELEASE'
   compile 'org.springframework:spring-web:3.1.2.RELEASE'
 
-  compile 'org.hibernate:hibernate-core:4.1.7.Final'
+  compile 'org.hibernate:hibernate-core:4.1.9.Final'
+  compile 'org.hibernate:hibernate-entitymanager:4.1.9.Final'
+  compile 'org.hibernate:hibernate-annotations:3.5.6-Final'
+  
   compile 'mysql:mysql-connector-java:5.1.21'
 }
 
