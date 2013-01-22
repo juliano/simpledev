@@ -6,6 +6,17 @@ layout: default
 <div class="post">
 {{ content }}
 </div>
+<div id='pageshare'>
+  <div class='sbutton facebook'>
+    <fb:like layout="button_count" show_faces="false" font=""></fb:like>
+  </div>
+  <div class='sbutton twitter'>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" >Tweet</a>
+  </div>
+  <div class='sbutton plusone'>
+    <g:plusone size="tall" annotation="none"></g:plusone>
+  </div>
+</div>
 <br>
 {% if site.related_posts.size > 0 %}
 <div id="related">
@@ -33,3 +44,19 @@ layout: default
   <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 {% endif %}
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
