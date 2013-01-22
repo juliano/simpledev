@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Contribuindo com projetos open source
+title: Contribuindo com projetos Open Source
 categories: Opensource
 permalink: /contribuindo-com-opensource.html
 ---
