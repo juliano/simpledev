@@ -16,23 +16,23 @@ Dessa forma o Spring está sendo intrusivo demais no design, já que ele devia a
 
 As libs primeiro. Abaixo, o [build.gradle][4] do exemplo.
 
-<script src="https://gist.github.com/4556731.js?file=build.gradle"></script>
+<script src="https://gist.github.com/juliano/4556731.js?file=build.gradle"></script>
 
 Agora as configurações para o Hibernate e para o Spring. Abaixo, o hibernate.cfg.xml:
 
-<script src="https://gist.github.com/4556731.js?file=hibernate.cfg.xml"></script>
+<script src="https://gist.github.com/juliano/4556731.js?file=hibernate.cfg.xml"></script>
 
 E para o Spring, o applicationContext.xml:
 
-<script src="https://gist.github.com/4556731.js?file=applicationContext.xml"></script>
+<script src="https://gist.github.com/juliano/4556731.js?file=applicationContext.xml"></script>
 
 Com isso, as configurações estão prontas. O DataSource utilizado é o fornecido pelo próprio Spring, que uso apenas para desenvolvimento, para produção o [c3p0][5] é uma opção mais apropriada. Para configurar a SessionFactory mantive o hibernate.cfg.xml, fazendo uma referência a ele. Apenas lembre que cada nova entidade do sistema deverá ser acrescentada ao mapeamento desse arquivo. Por fim, a configuração do [HibernateTransactionManager][6], para que o Spring faça o controle de transações. Agora, a interface CarroDao:
 
-<script src="https://gist.github.com/4556731.js?file=CarroDao.java"></script>
+<script src="https://gist.github.com/juliano/4556731.js?file=CarroDao.java"></script>
 
 Para eliminar todas aquelas dependências das classes do Spring, na implementação será injetada a [SessionFactory][7]:
 
-<script src="https://gist.github.com/4556731.js?file=HibernateCarroDao.java"></script>
+<script src="https://gist.github.com/juliano/4556731.js?file=HibernateCarroDao.java"></script>
 
 Agora podemos trabalhar livremente com a Session, desde que ela seja obtida da SessionFactory através do método getCurrentSession(), pois dessa forma não tiramos o controle da Session das mãos do Spring, ficando com o melhor das duas ferramentas. Caso seja utilizado o getSession(), fechar a Session passa a ser responsabilidade da sua aplicação.
 

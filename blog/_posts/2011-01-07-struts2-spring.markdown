@@ -20,12 +20,12 @@ necessários adicionar os jars **spring-asm**, **spring-beans**, **spring-contex
 **spring-core**, **spring-expression** e **spring-web**. Abaixo, o [build.gradle][6] completo 
 do projeto.
 
-<script src="https://gist.github.com/3182217.js?file=build.gradle"></script>
+<script src="https://gist.github.com/juliano/3182217.js?file=build.gradle"></script>
 
 No web.xml, além da configuração do Struts é necessário adicionar uma configuração para o 
 listener do Spring:
 
-<script src="https://gist.github.com/3182217.js?file=web.xml"></script>
+<script src="https://gist.github.com/juliano/3182217.js?file=web.xml"></script>
 
 Ao trabalhar com Spring, é necessário informá-lo quais objetos ele terá que administrar, 
 referenciados por ele como *beans*. Isso pode ser feito através de anotações, programaticamente 
@@ -35,7 +35,7 @@ configurar classes do próprio Spring. Aqui ele será usado para informar ao Spr
 ele deve procurar as classes que serão gerenciadas, as quais serão identificadas por meio de 
 anotações:
 
-<script src="https://gist.github.com/3182217.js?file=applicationContext.xml"></script>
+<script src="https://gist.github.com/juliano/3182217.js?file=applicationContext.xml"></script>
 
 Ao indicar um pacote, o Spring vai iniciar sua busca por ele e adentrar todos os seus subpacotes, 
 buscando por classes anotadas com [@Component][3] e suas especializações, adicionando as classes 
@@ -45,7 +45,7 @@ Mesmo minimizando o uso de XMLs, aqui o do Struts se faz necessário. Para reali
 com o Spring, será preciso indicar ao Struts que o Spring é que fará a instanciação de objetos. 
 Para isso será criado o arquivo **struts.xml** dentro da pasta resources:
 
-<script src="https://gist.github.com/3182217.js?file=struts.xml"></script>
+<script src="https://gist.github.com/juliano/3182217.js?file=struts.xml"></script>
 
 Isso finaliza a configuração.
 

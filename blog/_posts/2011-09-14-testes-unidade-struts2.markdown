@@ -25,7 +25,7 @@ testCompile <span class="str">'org.mockito:mockito-core:1.9.0'</span>
 
 Abaixo, a classe de testes. Vou explicar todos os passos, caso o leitor não tenha conhecimento sobre JUnit ou sobre mocks.
 
-<script src="https://gist.github.com/3852794.js?file=CarroActionTest.java"></script>
+<script src="https://gist.github.com/juliano/3852794.js?file=CarroActionTest.java"></script>
 
 Primeiro é criada uma instancia de CarroAction, a qual será testada. Repare que somente essa classe deve ser testada, não precisamos que o dao efetivamente salve os objetos passados para ele onde quer que seja, mas precisamos que ele simule esse comportamento, por isso será criado um mock de CarroDao. Um mock é um objeto que simula o comportamento de um objeto real (nessa caso, do CarroDao), que vai se comportar da forma que nós determinarmos – isso será mostrado à seguir.
 

@@ -16,7 +16,7 @@ do Struts 2][2], é preciso adicionar mais um jar nas dependências do [build.gr
 E está pronto para utilizar. Abaixo está a classe com as duas Actions, a que popula o combo de 
 estados da forma usual, e a que popula o combo de cidades com json:
 
-<script src="https://gist.github.com/3146833.js?file=LocalidadeAction.java"></script>
+<script src="https://gist.github.com/juliano/3146833.js?file=LocalidadeAction.java"></script>
 
 Até aqui, poucas novidades. A anotação **@ParentPackage(“json-default”)** é usada para extender 
 o pacote do JSON, seu uso é necessário para converter as informações para esse formato ao 
@@ -38,11 +38,11 @@ firebug (plugin do firefox).
 
 Abaixo, o código da localidade.jsp.
 
-<script src="https://gist.github.com/3146833.js?file=localidade.jsp"></script>
+<script src="https://gist.github.com/juliano/3146833.js?file=localidade.jsp"></script>
 
 E o populaCidades.js, que usa o jQuery para fazer a requisição e montar o combo com o resultado.
 
-<script src="https://gist.github.com/3146833.js?file=populaCidades.js"></script>
+<script src="https://gist.github.com/juliano/3146833.js?file=populaCidades.js"></script>
 
 Creio que com as tags do Struts 2 seja possível fazer isso sem precisar fazer uso do jQuery, 
 mas prefiro não usá-las. Prefiro usar o jQuery eu mesmo a acreditar no Struts 2 funcionando sozinho.

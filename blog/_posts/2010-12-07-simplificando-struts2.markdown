@@ -17,16 +17,16 @@ usado. Aqui, só será necessário fazer uso do pacote de convenções do Struts
 
 Primeiro, a configuração. Abaixo, o [build.gradle][2] do projeto.
 
-<script src="https://gist.github.com/3106705.js?file=build.gradle"></script>
+<script src="https://gist.github.com/juliano/3106705.js?file=build.gradle"></script>
 
 E o web.xml:
 
-<script src="https://gist.github.com/3106705.js?file=web.xml"></script>
+<script src="https://gist.github.com/juliano/3106705.js?file=web.xml"></script>
 
 Agora vou criar uma classe com 3 actions, uma para listar carros, uma que faz o direcionamento para o 
 formulário de inserção de um novo carro, e uma que salva o novo no banco. A classe fica assim:
 
-<script src="https://gist.github.com/3106705.js?file=CarroAction.java"></script>
+<script src="https://gist.github.com/juliano/3106705.js?file=CarroAction.java"></script>
 
 Como diria Jack, o Estripador, vamos por partes:
 
@@ -80,7 +80,7 @@ aumentar a complexidade. Para manter uma boa organização, mantenha as jsps rel
 
 Abaixo, a lista.jsp, redirecionada do método lista:
 
-<script src="https://gist.github.com/3106705.js?file=lista.jsp"></script>
+<script src="https://gist.github.com/juliano/3106705.js?file=lista.jsp"></script>
 
 Evitei o uso das tags do Struts, somente jstl é suficiente para iterar pela lista, além 
 de achar bem mais simples trabalhar com ela. É aqui que o método getCarros é chamado, por 
@@ -97,7 +97,7 @@ Que apenas redireciona para outra página. Apesar da action não fazer nada alé
 prática nunca redirecionar direto para a jsp, sempre devemos passar pela action antes. Isso nos leva 
 para a adiciona.jsp:
 
-<script src="https://gist.github.com/3106705.js?file=adiciona.jsp"></script>
+<script src="https://gist.github.com/juliano/3106705.js?file=adiciona.jsp"></script>
 
 O método setCarro deve existir para permitir que o Struts faça o trabalho de popular o objeto, 
 quando usamos name=“objeto.atributo”. Ao submeter o form, é chamada a action adiciona:

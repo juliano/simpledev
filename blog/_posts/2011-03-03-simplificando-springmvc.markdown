@@ -13,11 +13,11 @@ parte de seus recursos.
 
 A configuração primeiro. Abaixo, o [build.gradle][10] do exemplo.
 
-<script src="https://gist.github.com/3229414.js?file=build.gradle"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=build.gradle"></script>
 
 Também temos de configurar o web.xml.
 
-<script src="https://gist.github.com/3229414.js?file=web.xml"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=web.xml"></script>
 
 **DispatcherServlet** é a classe que habilita o uso Spring MVC, a qual vai trabalhar as 
 requisições recebidas. **HiddenHttpMethodFilter** é usado para habilitar o suporte RESTful do 
@@ -27,7 +27,7 @@ Por padrão, o Spring vai buscar o arquivo de configurações na pasta WEB-INF, 
 arquivo o mesmo nome da DispatcherServlet (no exemplo esse nome é context), acrescentando 
 –servlet.xml, então vamos ver a configuração do arquivo context-servlet.xml:
 
-<script src="https://gist.github.com/3229414.js?file=context-servlet.xml"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=context-servlet.xml"></script>
 
 Neste arquivo estão alguns itens de configuração importantes, **context:component-scan** vai 
 buscar todas as classes anotadas no local indicado por *base-package*, procurando em todos os 
@@ -53,7 +53,7 @@ ela faz redirecionamento para */WEB-INF/jsp/lista.jsp*.
 
 Finalizada a configuração, hora de mostrar as classes. Abaixo, o CarroController:
 
-<script src="https://gist.github.com/3229414.js?file=CarroController.java"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=CarroController.java"></script>
 
 Trabalhando com Spring MVC é muito simples manter as operações referentes ao Carro na mesma 
 classe. Vamos por partes:
@@ -97,7 +97,7 @@ considerar a url usada para definir isso; */carro/lista* fará com que ele procu
 E para exibir a lista na jsp, por padrão o Spring vai nomeá-la como “conteúdo da lista" + List, 
 nesse caso a lista será chamada de carroList, que pode ser acessado com jstl:
 
-<script src="https://gist.github.com/3229414.js?file=lista.jsp"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=lista.jsp"></script>
 
 O Spring permite que os métodos devolvam diferentes tipos de retorno, e uma pequena variação 
 deles será mostrada nesse exemplo. Todos os tipos de retorno permitidos podem ser vistos 
@@ -168,7 +168,7 @@ que o método é PUT é necessário declará-lo como POST e criar um campo ocult
 com o valor PUT (o processo é o mesmo para o caso do método DELETE). Felizmente, não é 
 necessário fazer isso na mão, pois o Spring possui a tag **form** que já faz esse trabalho:
 
-<script src="https://gist.github.com/3229414.js?file=editar.jsp"></script>
+<script src="https://gist.github.com/juliano/3229414.js?file=editar.jsp"></script>
 
 Essa tag, ao gerar o HTML final vai criar o campo oculto. As demais tags que o Spring 
 proporciona podem ser [vistas aqui][8].

@@ -31,7 +31,7 @@ compile <span class="str">'org.springframework:spring-web:3.1.1.RELEASE'</span>
 
 A configuração no web.xml fica assim:
 
-<script src="https://gist.github.com/3310282.js?file=web.xml"></script>
+<script src="https://gist.github.com/juliano/3310282.js?file=web.xml"></script>
 
 As tags servlet e servlet-name são para o uso “padrão” do JSF. A classe **ContextLoaderListener** é quem vai 
 subir o contexto do Spring, também uma configuração comum. O que merece atenção aqui é o 
@@ -40,7 +40,7 @@ que ele faça as injeções no momento adequado.
 
 Por fim, há mais uma alteração que deve ser colocada no **faces-config.xml**:
 
-<script src="https://gist.github.com/3310282.js?file=faces-config.xml"></script>
+<script src="https://gist.github.com/juliano/3310282.js?file=faces-config.xml"></script>
 
 JSF utiliza Expression Language (EL) para determinar a qual classe a página xhtml se refere. Fazendo uso de 
 uma classe chamada [ELResolver][2] ele pega a String passada, a interpreta e faz a referência adequada. A 
